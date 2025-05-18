@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mazist</h1>
+
+    <div id="controls">
+    <label for="difficulty">Choose Difficulty:</label>
+    <select id="difficulty" onchange="setDifficulty()">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+		<option value="extreme">Extreme</option>
+    </select>
+    <div class="tooltip">
+    <button id="toggleSlide" class="tooltip" onclick="toggleSlidingMode()">Sliding Mode: OFF</button> <!--Button for toggling sliding/smooth mode-->
+    <span class="tooltiptext">Press 'M' to toggle Sliding Mode</span>
+    </div>
+</div>
+
+
+    <div id="maze-container">
+        <canvas id="mazeCanvas"></canvas>
+    </div>
+
+    <div id="movement-buttons"> <!--OnScreen movement buttons for people who dont have a keyboard-->
+            <div class="tooltip1">
+        <button onclick="move('up')">Up</button>
+        <span class="tooltiptext1">Use WASD or Arrow Keys to move</span>
+            </div>
+        <button onclick="move('down')">Down</button>
+        <button onclick="move('left')">Left</button>
+        <button onclick="move('right')">Right</button>
+    </div>
+    
+    <button id="cmb" onclick="tcm()">OFF</button>
+    
+    <div id="customAlert" class="custom-alert">
+    <div class="alert-header">
+        <span id="alertTitle">Alert</span>
+    </div>
+    <div class="alert-footer">
+        <button class="ok-btn" onclick="closeAlert()">OK</button>
+    </div>
+</div>
+<div id="blurOverlay" class="blur-overlay"></div>
+
+    <script src="script.js"></script>
+    <div class="copyright">© Made By <a href="">GoStiee</a></div>
+</body>
+</html>
